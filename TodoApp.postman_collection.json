@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "e4a7403b-e755-4cd5-aed1-093ffed2c99d",
+		"name": "TodoApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18065110"
+	},
+	"item": [
+		{
+			"name": "SaveUSER",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"3\",\r\n    \"username\": \"Olya\",\r\n    \"password\":\"111111\",\r\n    \"name\": \"Anna\",\r\n    \"lastName\": \"Olya\",\r\n    \"email\": \"olya@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/saveUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"saveUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetALLUSERS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetONEUSER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getUser/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getUser",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUSER",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/delete/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveUpdateTODO",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"title\": \"HELLLLOOWWW\",\r\n    \"description\":\"do it \",\r\n    \"deadline\":\"2018-02-05T12:59:11.332\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/saveTodo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"saveTodo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetALLTODO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/allTodo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"allTodo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetONETODO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getTodo/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getTodo",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTODO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/deleteTodo/?id=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteTodo",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
