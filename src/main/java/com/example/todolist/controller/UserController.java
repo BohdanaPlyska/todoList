@@ -22,7 +22,7 @@ public class UserController {
 
     @PostMapping (USER_SAVE_USER_PAGE_URL)
     public ResponseEntity<User> saveAndUpdate(@RequestBody UserDTO user) {
-        return new ResponseEntity<>(userService.saveAndUpdate(user), HttpStatus.CREATED);
+        return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
     }
 
     @DeleteMapping(USER_DELETE_PAGE_URL)
@@ -40,5 +40,10 @@ public class UserController {
         List<User> users = new ArrayList<>();
         userService.listAllUsers().forEach(users::add);
         return ResponseEntity.ok(users);
+    }
+
+    @GetMapping(USER_GET_USER_PAGE_URL)
+    public ResponseEntity<User> getUser(@PathVariable Long id) {
+        return ResponseEntity.ok().body(userService.getById(id));
     }
 }

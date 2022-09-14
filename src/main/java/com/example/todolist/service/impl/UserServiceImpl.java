@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    public User saveAndUpdate(UserDTO userDTO) {
+    public User save(UserDTO userDTO) {
         if(userDTO.getPassword() != null) {
             userDTO.setPassword(bCryptPasswordEncoder.encode(userDTO.getPassword()));
         }
@@ -38,11 +38,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> listAllUsers() {
-        return (List<User>)userRepository.findAll();
+        return userRepository.findAll();
     }
 
     @Override
     public Optional<User> getUser(Long id) {
         return userRepository.findById(id);
+    }
+
+    @Override
+    public User getById(Long id) {
+        return userRepository.findById(id).get();
     }
 }

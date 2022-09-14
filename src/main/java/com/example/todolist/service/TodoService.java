@@ -15,4 +15,6 @@ public interface TodoService {
 
     Optional<Todo> getTodo(Long id);
 
+    Todo findById(Long id);
+
 }
